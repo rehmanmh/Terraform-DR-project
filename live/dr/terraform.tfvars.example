@@ -7,7 +7,7 @@ public_cidrs = ["10.40.0.0/24", "10.40.1.0/24"]
 private_cidrs = ["10.40.10.0/24", "10.40.11.0/24"]
 db_cidrs = ["10.40.20.0/24", "10.40.21.0/24"]
 # REPLACE with approved client IP ranges, not 0.0.0.0/0 for administrative services.
-allowed_ingress_cidrs = ["198.51.100.10/32"]
+allowed_ingress_cidrs = ["198.51.100.20/32"]
 deploy_application = false
 # Required for active deployments. Use an actual AMI in this Region.
 ami_id = "REPLACE_WITH_REGION_AMI"
