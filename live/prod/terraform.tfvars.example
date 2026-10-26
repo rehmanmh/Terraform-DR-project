@@ -1,0 +1,22 @@
+environment = "prod"
+aws_region = "ap-northeast-1"
+name = "example-prod"
+vpc_cidr = "10.30.0.0/16"
+azs = ["ap-northeast-1a", "ap-northeast-1c"]
+public_cidrs = ["10.30.0.0/24", "10.30.1.0/24"]
+private_cidrs = ["10.30.10.0/24", "10.30.11.0/24"]
+db_cidrs = ["10.30.20.0/24", "10.30.21.0/24"]
+# REPLACE with approved client IP ranges, not 0.0.0.0/0 for administrative services.
+allowed_ingress_cidrs = ["198.51.100.10/32"]
+deploy_application = true
+# Required for active deployments. Use an actual AMI in this Region.
+ami_id = "REPLACE_WITH_REGION_AMI"
+# Required for active deployments: ACM certificate in the same Region as the ALB.
+certificate_arn = "REPLACE_WITH_ACM_CERTIFICATE_ARN"
+instance_type = "t3.medium"
+min_size = 2
+max_size = 6
+desired_capacity = 2
+db_instance_class = "db.t3.micro"
+db_multi_az = true
+backup_retention_days = 7

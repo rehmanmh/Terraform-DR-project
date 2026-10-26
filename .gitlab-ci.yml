@@ -1,0 +1,18 @@
+stages: [validate, plan]
+image: hashicorp/terraform:1.10.5
+variables:
+  TF_IN_AUTOMATION: "true"
+# Configure GitLab OIDC-to-AWS IAM roles and backend bucket before enabling CI.
+# Example only: plans are not run without credentials and environment variable files.
+validate:
+  stage: validate
+  script:
+    - terraform fmt -check -recursive
+    - cd live/dev && terraform init -backend=false && terraform validate
+plan_dev:
+  stage: plan
+  when: manual
+  script:
+    - cd live/dev
+    - terraform init
+    - terraform plan -var-file=terraform.tfvars

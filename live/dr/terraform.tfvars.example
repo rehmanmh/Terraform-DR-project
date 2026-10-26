@@ -1,0 +1,22 @@
+environment = "dr"
+aws_region = "us-east-1"
+name = "example-dr"
+vpc_cidr = "10.40.0.0/16"
+azs = ["us-east-1a", "us-east-1b"]
+public_cidrs = ["10.40.0.0/24", "10.40.1.0/24"]
+private_cidrs = ["10.40.10.0/24", "10.40.11.0/24"]
+db_cidrs = ["10.40.20.0/24", "10.40.21.0/24"]
+# REPLACE with approved client IP ranges, not 0.0.0.0/0 for administrative services.
+allowed_ingress_cidrs = ["198.51.100.10/32"]
+deploy_application = false
+# Required for active deployments. Use an actual AMI in this Region.
+ami_id = "REPLACE_WITH_REGION_AMI"
+# Required for active deployments: ACM certificate in the same Region as the ALB.
+certificate_arn = "REPLACE_WITH_ACM_CERTIFICATE_ARN"
+instance_type = "t3.medium"
+min_size = 2
+max_size = 6
+desired_capacity = 2
+db_instance_class = "db.t3.micro"
+db_multi_az = false
+backup_retention_days = 7

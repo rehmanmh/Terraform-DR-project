@@ -1,0 +1,17 @@
+aws-terraform-enterprise/
+├── modules/
+│   ├── network/main.tf
+│   ├── security/main.tf
+│   ├── application/main.tf
+│   ├── load-balancer/main.tf
+│   └── database/main.tf
+├── live/
+│   ├── _shared/{main.tf,variables.tf}
+│   ├── dev/{main.tf,variables.tf,backend.tf,terraform.tfvars.example}
+│   ├── qa/{main.tf,variables.tf,backend.tf,terraform.tfvars.example}
+│   ├── prod/{main.tf,variables.tf,backend.tf,terraform.tfvars.example}
+│   └── dr/{main.tf,variables.tf,backend.tf,terraform.tfvars.example}
+├── docs/{OPERATIONS.md,TREE.txt}
+├── .gitlab-ci.yml
+├── .gitignore
+└── README.md
